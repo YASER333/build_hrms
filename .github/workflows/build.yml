@@ -27,7 +27,7 @@ jobs:
         run: npm install
 
       - name: Build macOS Application
-        run: npx electron-builder --mac dmg zip --publish never
+        run: npx electron-builder --mac dmg zip --x64 --publish never
 
       - name: Upload macOS Build
         uses: actions/upload-artifact@v4
