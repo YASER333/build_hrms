@@ -1,0 +1,68 @@
+{
+  "name": "build-hrms",
+  "version": "1.0.0",
+  "description": "HRMS Desktop Application",
+  "main": "main.js",
+
+  "author": {
+    "name": "FlareMinds Tech",
+    "email": "support@flareminds.com"
+  },
+
+  "homepage": "https://flareminds.com",
+
+  "license": "ISC",
+
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+
+  "build": {
+    "appId": "com.flareminds.hrms",
+    "productName": "TeamHub HRMS",
+
+    "files": [
+      "main.js",
+      "package.json",
+      "HRMSUI/build/**/*"
+    ],
+
+ "extraResources": [
+  {
+    "from": "HRMS_SERVER",
+    "to": "HRMS_SERVER",
+    "filter": [
+      "**/*"
+    ]
+  },
+  {
+    "from": "HRMS_SERVER/node_modules",
+    "to": "HRMS_SERVER/node_modules",
+    "filter": [
+      "**/*"
+    ]
+  }
+],
+
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Office",
+      "maintainer": "FlareMinds Tech"
+    }
+  },
+
+  "keywords": [
+    "hrms",
+    "electron",
+    "desktop-app"
+  ],
+
+  "devDependencies": {
+    "electron": "^44.2.0",
+    "electron-builder": "^26.15.3"
+  }
+}
