@@ -1,0 +1,38 @@
+name: Build TeamHub HRMS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install Root Dependencies
+        run: npm install
+
+      - name: Install Backend Dependencies
+        working-directory: HRMS_SERVER
+        run: npm install
+
+      - name: Build macOS Application
+        run: npx electron-builder --mac dmg zip
+
+      - name: Upload macOS Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: TeamHub-HRMS-macOS
+          path: |
+            dist/*.dmg
+            dist/*.zip
