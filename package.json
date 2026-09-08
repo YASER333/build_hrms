@@ -10,7 +10,6 @@
   },
 
   "homepage": "https://flareminds.com",
-
   "license": "ISC",
 
   "scripts": {
@@ -28,22 +27,15 @@
       "HRMSUI/build/**/*"
     ],
 
- "extraResources": [
-  {
-    "from": "HRMS_SERVER",
-    "to": "HRMS_SERVER",
-    "filter": [
-      "**/*"
-    ]
-  },
-  {
-    "from": "HRMS_SERVER/node_modules",
-    "to": "HRMS_SERVER/node_modules",
-    "filter": [
-      "**/*"
-    ]
-  }
-],
+    "extraResources": [
+      {
+        "from": "HRMS_SERVER",
+        "to": "HRMS_SERVER",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
 
     "linux": {
       "target": [
@@ -52,16 +44,16 @@
       ],
       "category": "Office",
       "maintainer": "FlareMinds Tech"
+    },
+
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.business"
     }
-  }, 
-  "mac": {
-    "target": [
-      "dmg",
-      "zip"
-    ],
-    "category": "public.app-category.business"
-  }
-},
+  },
 
   "keywords": [
     "hrms",
