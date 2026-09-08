@@ -53,7 +53,15 @@
       "category": "Office",
       "maintainer": "FlareMinds Tech"
     }
-  },
+  }, 
+  "mac": {
+    "target": [
+      "dmg",
+      "zip"
+    ],
+    "category": "public.app-category.business"
+  }
+},
 
   "keywords": [
     "hrms",
